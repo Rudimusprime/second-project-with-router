@@ -1,5 +1,5 @@
 import React from 'react';
-import {Route, Routes} from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom';
 import '../styles/Header.css';
 import img1 from '../images/img1.jpg';
 import img2 from '../images/img2.jpg';
@@ -8,34 +8,34 @@ import img3 from '../images/img3.jpg';
 const Header = () => {
     return (
         <>
-            <Routes>
+            <Switch>
                 <Route path="/"
                        exact
-                       element={
+                       render={() => (
                            <img src={img1}
                                 alt="miasto"/>
-                       }/>
+                       )}/>
                 <Route path="/products"
-                       element={
+                       render={() => (
                            <img src={img2}
                                 alt="miasto"/>
-                       }/>
+                       )}/>
                 <Route path="/contact"
-                       element={
+                       render={() => (
                            <img src={img3}
                                 alt="miasto"/>
-                       }/>
+                       )}/>
                 <Route path="/admin"
-                       element={
+                       render={() => (
                            <img src={img3}
                                 alt="miasto"/>
-                       }/>
+                       )}/>
                 <Route path="*"
-                       element={
-                           <img src={img1}
+                       render={() => (
+                           <img src={img3}
                                 alt="miasto"/>
-                       }/>
-            </Routes>
+                       )}/>
+            </Switch>
         </>
     );
 }

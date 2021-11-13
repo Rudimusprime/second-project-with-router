@@ -28,7 +28,8 @@ const list = [
 const Navigation = () => {
     const menu = list.map(item => (
         <li key={item.name}>
-            <NavLink to={item.path}>{item.name}</NavLink>
+            <NavLink to={item.path}
+                     exact={item.exact ? item.exact : false}>{item.name}</NavLink>
         </li>
     ))
     return (

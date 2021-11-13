@@ -1,8 +1,15 @@
 import React from 'react';
+import {Route} from "react-router-dom";
+
+const permission = false;
 
 const AdminPage = () => {
     return (
-        <h1>Panel administratora</h1>
+        <>
+            <Route redner={() => (
+                permission ? (<h3>Panel admina - dzień dobry</h3>) : ("xd")
+            )}/>
+        </>
     );
 }
 
